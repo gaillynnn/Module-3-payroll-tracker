@@ -41,6 +41,8 @@ const displayAverageSalary = function (employeesArray) {
 // Select a random employee
 const getRandomEmployee = function (employeesArray) {
   // TODO: Select and display a random employee
+  var index = Math.floor(Math.random() * employeesArray.length) //0.5 * 3 = 1
+  console.log("Congratulations to our lucky draw winner",employeesArray[index].firstName+" "+employeesArray[index].lastName)
 }
 
 /*
