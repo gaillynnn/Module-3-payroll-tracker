@@ -6,29 +6,36 @@ const collectEmployees = function () {
   // TODO: Get user input to creat\e and return an array of employee objects
   var employeeList = []
   let continueAdd = true
-  while(continueAdd){
-  var employeeFirstName = prompt("enter employee first name?")
-  var employeeLastName = prompt("enter employee last name?")
-  var employeeSalary = prompt("enter employee salary?")
-  if(employeeFirstName.length ===0 || employeeLastName.length ===0 || isNaN(employeeSalary)){
-    alert("Please enter valid data")
-  }else{
-    let employee ={
-      firstName : employeeFirstName,
-      lastName : employeeLastName,
-      salary : parseFloat(employeeSalary)
+  while (continueAdd) {
+    var employeeFirstName = prompt("enter employee first name?")
+    var employeeLastName = prompt("enter employee last name?")
+    var employeeSalary = prompt("enter employee salary?")
+    if (employeeFirstName.length === 0 || employeeLastName.length === 0 || isNaN(employeeSalary)) {
+      alert("Please enter valid data")
+    } else {
+      let employee = {
+        firstName: employeeFirstName,
+        lastName: employeeLastName,
+        salary: parseFloat(employeeSalary)
+      }
+      employeeList.push(employee)
     }
-    employeeList.push(employee)
+    continueAdd = confirm("Do you wish to add more employee data?")
   }
-  continueAdd = confirm("Do you wish to add more employee data?")
-}
-console.log(employeeList)
-return employeeList
+  console.log(employeeList)
+  return employeeList
 }
 
 // Display the average salary
 const displayAverageSalary = function (employeesArray) {
   // TODO: Calculate and display the average salary
+ // loops - while / for loop / forEach
+ var totalSalary = 0 //variable
+ for(let i=0;i<employeesArray.length;i++){
+  totalSalary += employeesArray[i].salary
+ }
+ console.log("Total Salary", totalSalary)
+ console.log("Average Salary", totalSalary/employeesArray.length)
 }
 
 // Select a random employee
